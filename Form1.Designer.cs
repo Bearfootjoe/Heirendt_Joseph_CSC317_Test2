@@ -51,6 +51,7 @@ namespace Heirendt_Joseph_CSC317_Test2
             // 
             // numberBoxTempValue
             // 
+            this.numberBoxTempValue.DecimalPlaces = 2;
             this.numberBoxTempValue.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberBoxTempValue.Location = new System.Drawing.Point(227, 23);
             this.numberBoxTempValue.Maximum = new decimal(new int[] {
@@ -67,6 +68,7 @@ namespace Heirendt_Joseph_CSC317_Test2
             this.numberBoxTempValue.Size = new System.Drawing.Size(120, 26);
             this.numberBoxTempValue.TabIndex = 1;
             this.numberBoxTempValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numberBoxTempValue.ValueChanged += new System.EventHandler(this.numberBoxTempValue_ValueChanged);
             // 
             // comboUnits
             // 
