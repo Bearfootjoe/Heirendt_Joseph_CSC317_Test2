@@ -35,6 +35,7 @@ namespace Heirendt_Joseph_CSC317_Test2
             this.lbl_ConversionValue1 = new System.Windows.Forms.Label();
             this.lbl_ConversionValue2 = new System.Windows.Forms.Label();
             this.imageTempGauge = new System.Windows.Forms.PictureBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.numberBoxTempValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageTempGauge)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +117,6 @@ namespace Heirendt_Joseph_CSC317_Test2
             this.imageTempGauge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imageTempGauge.TabIndex = 5;
             this.imageTempGauge.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +145,7 @@ namespace Heirendt_Joseph_CSC317_Test2
         public System.Windows.Forms.Label lbl_ConversionValue1;
         public System.Windows.Forms.Label lbl_ConversionValue2;
         public System.Windows.Forms.PictureBox imageTempGauge;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 

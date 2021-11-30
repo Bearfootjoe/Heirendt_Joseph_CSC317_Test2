@@ -15,6 +15,7 @@ namespace Heirendt_Joseph_CSC317_Test2
         public Form1()
         {
             InitializeComponent();
+            this.imageTempGauge.Image = Properties.Resources.temperaturegauge_none;
         }
 
         private void comboUnits_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace Heirendt_Joseph_CSC317_Test2
             {
                 if (numBoxValue >= 0)
                 {
-                    lbl_ConversionValue1.Text = Convert.ToString(CelsiusValue("Celsius", numBoxValue)) + "°C";
+                    lbl_ConversionValue1.Text = Convert.ToString(CelsiusValue("Kelvin", numBoxValue)) + "°C";
                     lbl_ConversionValue2.Text = Convert.ToString(FahrenheitValue("Kelvin", numBoxValue)) + "°F";
                 }
                 else
@@ -67,13 +68,16 @@ namespace Heirendt_Joseph_CSC317_Test2
             double outputTemp;
             if (unit == "Fahrenheit")
             {
-                // Output to Kelvin
-                outputTemp = ((temp - 32) * (5 / 9)) + 273.15;
+                // convert from F to K
+                updateTempGraphic(temp);
+                outputTemp = (temp - 32);
+                outputTemp = outputTemp * 0.56;
+                outputTemp = outputTemp + 273.15;
                 return outputTemp;
             }
-            else if (unit == "Celsius")
+            if (unit == "Celsius")
             {
-                // Output to Kelvin
+                // convert from celsius to kelvin
                 outputTemp = temp + 273.15;
                 return outputTemp;
             }
@@ -87,7 +91,9 @@ namespace Heirendt_Joseph_CSC317_Test2
             if (unit == "Fahrenheit")
             {
                 // Output to Celsius
-                outputTemp = ((temp - 32) * (5 / 9));
+                updateTempGraphic(temp);
+                outputTemp = (temp - 32);
+                outputTemp = outputTemp * 0.56;
                 return outputTemp;
             }
             else if (unit == "Kelvin")
@@ -103,25 +109,50 @@ namespace Heirendt_Joseph_CSC317_Test2
         {
             double temp = Convert.ToDouble(temperature);
             double outputTemp;
-            if(unit == "Celsius")
+            if (unit == "Celsius")
             {
-                // Output to Fahrenheit
+                // Output to Fahrenheit from celsius
                 outputTemp = (temp * (9 / 5)) + 32;
+                updateTempGraphic(outputTemp);
                 return outputTemp;
             }
-            else if(unit == "Kelvin")
+            else if (unit == "Kelvin")
             {
-                // Output to Fahrenheit
-                outputTemp = ((temp - 273.15) * (9 / 5) + 32);
+                // Output to Fahrenheit from Kelvin
+                outputTemp = (temp - 273.15);
+                outputTemp = outputTemp * 1.8;
+                outputTemp = outputTemp + 32;
+                updateTempGraphic(outputTemp);
                 return outputTemp;
             }
-            else 
-                return 0;
+            else
+            {
+                updateTempGraphic(temp);
+                return temp;
+            }
         }
 
         private void numberBoxTempValue_ValueChanged(object sender, EventArgs e)
         {
             comboUnits_SelectedIndexChanged(sender, e);
+        }
+
+        public void updateTempGraphic(double temperature)
+        {
+            if (temperature >= 95)
+                this.imageTempGauge.Image = Properties.Resources.temperaturegauge_hot;
+            else if (temperature < 95 && temperature > 75)
+                this.imageTempGauge.Image = Properties.Resources.temperaturegauge_warm;
+            else if (temperature <= 75 && temperature > 55)
+                this.imageTempGauge.Image = Properties.Resources.temperaturegauge_mild;
+            else if (temperature <= 55 && temperature >= 33)
+                this.imageTempGauge.Image = Properties.Resources.temperaturegauge_cold;
+            else if(temperature < 33)
+                this.imageTempGauge.Image = Properties.Resources.temperaturegauge_freezing;
+            else
+                this.imageTempGauge.Image = Properties.Resources.temperaturegauge_none;
+
+
         }
     }
 }
