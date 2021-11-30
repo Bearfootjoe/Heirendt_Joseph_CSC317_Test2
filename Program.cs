@@ -1,4 +1,17 @@
-﻿using System;
+﻿/*
+
+Author: Joseph Heirendt
+
+Program Title: Temperature Converter
+
+File Description:
+
+For test 2, this program will take in input and convert its temperature to either kelvin or fahrenheit.
+
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
