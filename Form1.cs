@@ -40,14 +40,27 @@ namespace Heirendt_Joseph_CSC317_Test2
                 }
                 else
                 {
-                    // Open dialog box
-                    comboUnits.Text = null;
-                    numBoxValue = 0;
+                    validateUserEntry(numBoxValue);
+                    this.numberBoxTempValue.Value = 0;
                 }
             }
 
         }
+        public void validateUserEntry(decimal value)
+        {
+            // Checks the value of the text.
+            if (value < 0)
+            {
+                // Initializes the variables to pass to the MessageBox.Show method.
+                string message = "Kelvin cannot be a negative value";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
 
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
+        }
         public double KelvinValue(string unit, decimal temperature)
         {
             double temp = Convert.ToDouble(temperature);
