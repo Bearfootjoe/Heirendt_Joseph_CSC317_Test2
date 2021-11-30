@@ -16,5 +16,10 @@ namespace Heirendt_Joseph_CSC317_Test2
         {
             InitializeComponent();
         }
+
+        private void comboUnits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

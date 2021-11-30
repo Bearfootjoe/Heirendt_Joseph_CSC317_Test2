@@ -34,9 +34,9 @@ namespace Heirendt_Joseph_CSC317_Test2
             this.comboUnits = new System.Windows.Forms.ComboBox();
             this.lbl_ConversionValue1 = new System.Windows.Forms.Label();
             this.lbl_ConversionValue2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imageTempGauge = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numberBoxTempValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageTempGauge)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_StartingTemp
@@ -80,6 +80,7 @@ namespace Heirendt_Joseph_CSC317_Test2
             this.comboUnits.Name = "comboUnits";
             this.comboUnits.Size = new System.Drawing.Size(120, 26);
             this.comboUnits.TabIndex = 2;
+            this.comboUnits.SelectedIndexChanged += new System.EventHandler(this.comboUnits_SelectedIndexChanged);
             // 
             // lbl_ConversionValue1
             // 
@@ -105,20 +106,21 @@ namespace Heirendt_Joseph_CSC317_Test2
             this.lbl_ConversionValue2.Text = "Value2";
             this.lbl_ConversionValue2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pictureBox1
+            // imageTempGauge
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(42, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 102);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.imageTempGauge.Location = new System.Drawing.Point(42, 60);
+            this.imageTempGauge.Name = "imageTempGauge";
+            this.imageTempGauge.Size = new System.Drawing.Size(121, 102);
+            this.imageTempGauge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imageTempGauge.TabIndex = 5;
+            this.imageTempGauge.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 175);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imageTempGauge);
             this.Controls.Add(this.lbl_ConversionValue2);
             this.Controls.Add(this.lbl_ConversionValue1);
             this.Controls.Add(this.comboUnits);
@@ -127,7 +129,7 @@ namespace Heirendt_Joseph_CSC317_Test2
             this.Name = "Form1";
             this.Text = "Temperature Converter";
             ((System.ComponentModel.ISupportInitialize)(this.numberBoxTempValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageTempGauge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,7 +142,7 @@ namespace Heirendt_Joseph_CSC317_Test2
         private System.Windows.Forms.ComboBox comboUnits;
         public System.Windows.Forms.Label lbl_ConversionValue1;
         public System.Windows.Forms.Label lbl_ConversionValue2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox imageTempGauge;
     }
 }
 

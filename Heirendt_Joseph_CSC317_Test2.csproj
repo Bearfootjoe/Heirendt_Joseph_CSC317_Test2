@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temperaturegauge_freezing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temperaturegauge_hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temperaturegauge_mild.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temperaturegauge_none.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temperaturegauge_warm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temperaturegauge_cold.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
